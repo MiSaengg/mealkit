@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AppController {
     Logger logger = LoggerFactory.getLogger(AppController.class);
 
-    @Value("${spring.application.name}")
+    @Value("Hello")
     private String name;
 
     @GetMapping("/")
