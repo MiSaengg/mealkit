@@ -1,14 +1,13 @@
 package com.example.mealkit.dto;
 import com.example.mealkit.model.Market;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-public class createMarketDto {
+public class CreateMarketDto {
     private String name;
     private Boolean admin;
     private String location; //ex) 1801-1001 RICHARD ST VANCOUVER BC V6B 1J6

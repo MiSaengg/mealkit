@@ -1,8 +1,8 @@
 package com.example.mealkit.controller;
 
 import com.example.mealkit.dto.MarketDto;
-import com.example.mealkit.dto.createMarketDto;
-import com.example.mealkit.dto.updateMarketDto;
+import com.example.mealkit.dto.CreateMarketDto;
+import com.example.mealkit.dto.UpdateMarketDto;
 import com.example.mealkit.model.Market;
 import com.example.mealkit.service.MarketService;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +19,7 @@ public class MarketApiController {
     private final MarketService marketService;
 
     @PostMapping("/api/market")
-    public ResponseEntity<Market> addMarket(@RequestBody createMarketDto request){
+    public ResponseEntity<Market> addMarket(@RequestBody CreateMarketDto request){
         Market savedMarket = marketService.save(request);
 
         return ResponseEntity.status(HttpStatus.CREATED)
@@ -38,7 +38,7 @@ public class MarketApiController {
     }
 
     @PutMapping("/api/market/{id}")
-    public ResponseEntity<Market> updateMarket(@PathVariable long id, @RequestBody updateMarketDto request){
+    public ResponseEntity<Market> updateMarket(@PathVariable long id, @RequestBody UpdateMarketDto request){
         Market updatedMarket = marketService.update(id, request);
 
         return ResponseEntity.ok()

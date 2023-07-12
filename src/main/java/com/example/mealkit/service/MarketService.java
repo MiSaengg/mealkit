@@ -1,7 +1,7 @@
 package com.example.mealkit.service;
 
-import com.example.mealkit.dto.createMarketDto;
-import com.example.mealkit.dto.updateMarketDto;
+import com.example.mealkit.dto.CreateMarketDto;
+import com.example.mealkit.dto.UpdateMarketDto;
 import com.example.mealkit.model.Market;
 import com.example.mealkit.repository.MarketRepository;
 import jakarta.transaction.Transactional;
@@ -15,7 +15,7 @@ import java.util.List;
 public class MarketService {
     private final MarketRepository marketRepository;
 
-    public Market save(createMarketDto request){
+    public Market save(CreateMarketDto request){
         return marketRepository.save(request.toEntity());
     }
 
@@ -24,7 +24,7 @@ public class MarketService {
     }
 
     @Transactional
-    public Market update(long id, updateMarketDto request){
+    public Market update(long id, UpdateMarketDto request){
         Market market = marketRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("not found:" +id));
 
