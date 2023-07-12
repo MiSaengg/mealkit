@@ -20,7 +20,9 @@ import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
@@ -62,10 +64,13 @@ class MarketApiControllerTest {
 
         final String requestBody = objectMapper.writeValueAsString(userRequest);
 
+        //when (Send a Request)
         ResultActions result = mockMvc.perform(post(url)
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(requestBody));
 
+
+        //then
         result.andExpect(status().isCreated());
 
         List<Market> markets = marketRepository.findAll();
@@ -73,5 +78,33 @@ class MarketApiControllerTest {
         assertThat(markets.size()).isEqualTo(1);
         assertThat(markets.get(0).getName()).isEqualTo(name);
         assertThat(markets.get(0).getDescription()).isEqualTo(description);
+    }
+
+    @DisplayName("Find All Market : Successfully find the all market")
+    @Test
+    public void findAllMarket() throws Exception{
+        final String url = "/api/market";
+        final String name = "market curly";
+        final boolean admin = true;
+        final String location = "1801-1001 RICHARD ST VANCOUVER BC V6B 1J6";
+        final String password = "1234";
+        final String ratingURL = "5678";
+        final byte[] image = new byte[123];
+        final String description = "description";
+
+        marketRepository.save(Market.builder()
+                .name(name)
+                .description(description)
+                .build());
+
+        //when
+        final ResultActions resultActions = mockMvc.perform(get(url).accept(MediaType.APPLICATION_JSON));
+
+        //then
+        resultActions
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].name").value(name))
+                .andExpect((jsonPath("$[0].description").value(description)));
+
     }
 }
