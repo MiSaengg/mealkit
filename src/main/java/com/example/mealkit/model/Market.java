@@ -3,6 +3,9 @@ package com.example.mealkit.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -34,6 +37,10 @@ public class Market {
 
 //    @Column
 //    private String contact;
+
+    @OneToMany(mappedBy = "market", cascade = CascadeType.ALL)
+    private List<Product> productList = new ArrayList<>();
+
 
     @Builder
     public Market(Boolean admin, String name, String location, String password, String ratingURL, byte[] image, String description){
