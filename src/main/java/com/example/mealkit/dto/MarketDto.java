@@ -17,15 +17,15 @@ public class MarketDto {
     private String description;
     // private String contact;
 
-    public MarketDto(Market entity) {
-        this.id = entity.getId();
-        this.name = entity.getName();
-        this.admin = entity.getAdmin();
-        this.location = entity.getLocation();
-        this.password = entity.getPassword();
-        this.ratingURL = entity.getRatingURL();
-        this.image = entity.getImage();
-        this.description = entity.getDescription();
+    public MarketDto(Market market) {
+        this.id = market.getId();
+        this.name = market.getName();
+        this.admin = market.getAdmin();
+        this.location = market.getLocation();
+        this.password = market.getPassword();
+        this.ratingURL = market.getRatingURL();
+        this.image = market.getImage();
+        this.description = market.getDescription();
         // this.contact = entity.getContact();
     }
 }
