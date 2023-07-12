@@ -1,5 +1,7 @@
 package com.example.mealkit.controller;
 
+import com.example.mealkit.dto.MarketDto;
+import com.example.mealkit.model.Market;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,10 +15,12 @@ public class AppController {
     @Value("Hello")
     private String name;
 
-    @GetMapping("/")
+    @GetMapping("/api/test")
     public String getRoot() {
         logger.info(name);
         //Using http : 8000 to activate (using httpie)
-        return "Meal Kit Project";
+
+        System.out.println("HEKKOO");
+        return "Hello NextJS";
     }
 }

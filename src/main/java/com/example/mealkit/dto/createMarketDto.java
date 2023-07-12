@@ -1,7 +1,13 @@
 package com.example.mealkit.dto;
+import com.example.mealkit.model.Market;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
 public class createMarketDto {
     private String name;
     private Boolean admin;
@@ -11,4 +17,17 @@ public class createMarketDto {
     private byte[] image;
     private String description;
 //  private String contact;
+
+    public Market toEntity(){
+        return Market
+                .builder()
+                .name(name)
+                .admin(admin)
+                .location(location)
+                .password(password)
+                .ratingURL(ratingURL)
+                .image(image)
+                .description(description)
+                .build();
+    }
 }

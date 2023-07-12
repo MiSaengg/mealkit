@@ -1,11 +1,11 @@
 package com.example.mealkit.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 @Entity
-@Data
-@Table(name = "market")
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Market {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,4 +34,24 @@ public class Market {
 
 //    @Column
 //    private String contact;
+
+    @Builder
+    public Market(Boolean admin, String name, String location, String password, String ratingURL, byte[] image, String description){
+        this.admin = admin;
+        this.name = name;
+        this.location = location;
+        this.password = password;
+        this.ratingURL = ratingURL;
+        this.image = image;
+        this.description = description;
+    }
+
+    public void update(String name, String location, String password, String ratingURL, byte[] image, String description ){
+        this.name = name;
+        this.location = location;
+        this.password = password;
+        this.ratingURL = ratingURL;
+        this.image = image;
+        this.description = description;
+    }
 }
