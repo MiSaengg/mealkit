@@ -45,6 +45,12 @@ class ProductApiControllerTest {
         productRepository.deleteAll();
     }
 
+    @BeforeEach
+    public void addMarket(){
+
+    }
+
+
     @DisplayName("Add Product : Successfully add the product in Market")
     @Test
     public void addProduct() throws Exception{

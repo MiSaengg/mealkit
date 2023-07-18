@@ -1,15 +1,15 @@
 package com.example.mealkit.controller;
 
 import com.example.mealkit.dto.AddProductRequest;
+import com.example.mealkit.dto.ReadProductRequest;
 import com.example.mealkit.model.Product;
 import com.example.mealkit.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @CrossOrigin(value = "http://localhost:3000")
 @RequiredArgsConstructor
@@ -23,6 +23,17 @@ public class ProductApiController {
 
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(savedProduct);
+    }
+
+    @GetMapping("/api/product")
+    public ResponseEntity<List<ReadProductRequest>> readProduct(){
+        List<ReadProductRequest> products = productService.findAll()
+                .stream()
+                .map(ReadProductRequest::new)
+                .toList();
+
+        return ResponseEntity.ok()
+                .body(products);
     }
 
 }

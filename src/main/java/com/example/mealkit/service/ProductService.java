@@ -6,6 +6,8 @@ import com.example.mealkit.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class ProductService {
@@ -13,5 +15,9 @@ public class ProductService {
 
     public Product save(AddProductRequest request){
         return productRepository.save(request.toEntity());
+    }
+
+    public List<Product> findAll(){
+        return productRepository.findAll();
     }
 }

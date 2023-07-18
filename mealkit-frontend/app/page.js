@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 
 export default function Home() {
 
-  const [data , setData] = useState(0)
+  const [data , setData] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {

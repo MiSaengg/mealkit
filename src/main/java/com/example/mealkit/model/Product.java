@@ -15,6 +15,10 @@ public class Product {
     @Column
     private String product_name;
 
+
+
+
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "market_id")
     @ToString.Exclude
