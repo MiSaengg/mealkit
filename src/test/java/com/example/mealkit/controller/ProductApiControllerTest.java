@@ -57,6 +57,7 @@ class ProductApiControllerTest {
         //given
         final String url = "/api/product";
         final String product_name = "Kimchi";
+
         //Market Data
         final String name = "market curly";
         final boolean admin = true;
@@ -67,7 +68,8 @@ class ProductApiControllerTest {
         final String description = "description";
         final Market market = new Market(admin, name,location,password,ratingURL,image,description);
 
-        final AddProductRequest userRequest = new AddProductRequest(product_name,market);
+
+        final AddProductRequest userRequest = new AddProductRequest(product_name, market);
         final String requestBody = objectMapper.writeValueAsString(userRequest);
 
         //when (Send a Request)

@@ -2,7 +2,7 @@ package com.example.mealkit.controller;
 
 import com.example.mealkit.dto.AddProductRequest;
 import com.example.mealkit.dto.ReadProductRequest;
-import com.example.mealkit.dto.UpdateProductRequest;
+import com.example.mealkit.dto.UpdateProductDto;
 import com.example.mealkit.model.Product;
 import com.example.mealkit.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -37,29 +37,12 @@ public class ProductApiController {
                 .body(products);
     }
 
-    @GetMapping("/api/product/{id}")
-    public ResponseEntity<ReadProductRequest> readProduct(@PathVariable Long id){
-        Product product = productService.findById(id);
-        ReadProductRequest productRequest = new ReadProductRequest(product);
-
-        return ResponseEntity.ok()
-                .body(productRequest);
-    }
-
-    @PutMapping("/api/product/{id}")
-    public ResponseEntity<Product> updateProduct(@PathVariable Long id, @RequestBody UpdateProductRequest request){
+    @PostMapping("/api/product/{id}")
+    public ResponseEntity<Product> updateProduct(@PathVariable long id, @RequestBody UpdateProductDto request){
         Product updatedProduct = productService.update(id, request);
 
         return ResponseEntity.ok()
                 .body(updatedProduct);
     }
-
-    @DeleteMapping("/api/product/{id}")
-    public ResponseEntity<Void> deleteProduct(@PathVariable Long id){
-        productService.delete(id);
-
-        return ResponseEntity.noContent().build();
-    }
-
 
 }
