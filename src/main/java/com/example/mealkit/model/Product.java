@@ -28,4 +28,9 @@ public class Product {
         this.product_name = product_name;
         this.market = market;
     }
+
+
+    public void update(String product_name){
+        this.product_name = product_name;
+    }
 }

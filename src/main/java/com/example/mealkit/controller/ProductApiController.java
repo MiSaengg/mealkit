@@ -2,6 +2,7 @@ package com.example.mealkit.controller;
 
 import com.example.mealkit.dto.AddProductRequest;
 import com.example.mealkit.dto.ReadProductRequest;
+import com.example.mealkit.dto.UpdateProductDto;
 import com.example.mealkit.model.Product;
 import com.example.mealkit.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -34,6 +35,14 @@ public class ProductApiController {
 
         return ResponseEntity.ok()
                 .body(products);
+    }
+
+    @PostMapping("/api/product/{id}")
+    public ResponseEntity<Product> updateProduct(@PathVariable long id, @RequestBody UpdateProductDto request){
+        Product updatedProduct = productService.update(id, request);
+
+        return ResponseEntity.ok()
+                .body(updatedProduct);
     }
 
 }

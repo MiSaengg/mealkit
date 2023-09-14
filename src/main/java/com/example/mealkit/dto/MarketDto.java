@@ -31,4 +31,5 @@ public class MarketDto {
         this.description = market.getDescription();
         // this.contact = entity.getContact();
     }
+
 }
