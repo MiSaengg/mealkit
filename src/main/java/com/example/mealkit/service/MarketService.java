@@ -23,13 +23,32 @@ public class MarketService {
         return marketRepository.findAll();
     }
 
+    public Market findById(long id){
+        return marketRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("not found:" + id));
+    }
+
     @Transactional
     public Market update(long id, UpdateMarketDto request){
         Market market = marketRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("not found:" +id));
 
-        market.update(request.getName() , request.getLocation() , request.getPassword(), request.getRatingURL(),request.getImage(),request.getDescription());
+        market.update(request.getName() ,
+                request.getLocation() ,
+                request.getPassword(),
+                request.getRatingURL(),
+                request.getImage(),
+                request.getDescription());
 
         return market;
     }
+
+    @Transactional
+    public void delete(long id){
+        if(!marketRepository.existsById(id)) {
+            throw new IllegalArgumentException("not found:" + id);
+        }
+        marketRepository.deleteById(id);
+    }
+
 }

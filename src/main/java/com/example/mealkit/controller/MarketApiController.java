@@ -37,11 +37,26 @@ public class MarketApiController {
                 .body(markets);
     }
 
+    @GetMapping("/api/market/{id}")
+    public ResponseEntity<MarketDto> findMarketById(@PathVariable long id){
+        MarketDto market = new MarketDto(marketService.findById(id));
+
+        return ResponseEntity.ok()
+                .body(market);
+    }
+
     @PutMapping("/api/market/{id}")
     public ResponseEntity<Market> updateMarket(@PathVariable long id, @RequestBody UpdateMarketDto request){
         Market updatedMarket = marketService.update(id, request);
 
         return ResponseEntity.ok()
                 .body(updatedMarket);
+    }
+
+    @DeleteMapping("/api/market/{id}")
+    public ResponseEntity<Void> deleteMarket(@PathVariable long id){
+        marketService.delete(id);
+
+        return ResponseEntity.noContent().build();
     }
 }
