@@ -39,7 +39,7 @@ public class Market {
 //    @Column
 //    private String contact;
 
-    @OneToMany(mappedBy = "market", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "market", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Product> productList = new ArrayList<>();
 
 

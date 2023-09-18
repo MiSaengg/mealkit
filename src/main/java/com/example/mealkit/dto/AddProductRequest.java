@@ -27,20 +27,11 @@ public class AddProductRequest {
 //    private String product_size;
     private Market market;
 
-    public Product toEntity(){
+    public Product toEntity(Market market){
+        System.out.println(market);
         return Product
                 .builder()
                 .product_name(product_name)
-//                .product_description(product_description)
-//                .product_type(product_type)
-//                .product_stock(product_stock)
-//                .product_price(product_price)
-//                .product_discount(product_discount)
-//                .product_allergy(product_allergy)
-//                .product_production_date(product_production_date)
-//                .product_expiration_date(product_expiration_date)
-//                .product_image(product_image)
-//                .product_size(product_size)
                 .market(market)
                 .build();
     }
