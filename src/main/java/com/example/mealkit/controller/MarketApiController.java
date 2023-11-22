@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @CrossOrigin(value = "http://localhost:3000")
 @RequiredArgsConstructor
@@ -27,15 +28,26 @@ public class MarketApiController {
     }
 
     @GetMapping("/api/market")
-    public ResponseEntity<List<MarketDto>> findAllMarkets(){
-        List<MarketDto> markets = marketService.findAll()
-                .stream()
-                .map(MarketDto::new)
-                .toList();
-
-        return ResponseEntity.ok()
-                .body(markets);
+    public ResponseEntity<?> findMarkets(@RequestParam(value= "name", required = false) String name,
+                                         @RequestParam(value= "location", required = false) String location,
+                                         @RequestParam(value= "ratingURL", required = false) String ratingURL) {
+        try {
+            List<Market> markets = marketService.findByQuery(name, location, ratingURL);
+            if (markets.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("market not found based on query");
+            }
+            List<MarketDto> marketDto = markets.stream()
+                    .map(MarketDto::new)
+                    .collect(Collectors.toList());
+            return ResponseEntity.ok().body(marketDto);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error: " + e.getMessage());
+        }
     }
+
+
 
     @GetMapping("/api/market/{id}")
     public ResponseEntity<MarketDto> findMarketById(@PathVariable long id){

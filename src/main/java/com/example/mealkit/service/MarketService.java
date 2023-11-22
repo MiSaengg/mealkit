@@ -7,6 +7,7 @@ import com.example.mealkit.repository.MarketRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,16 +17,23 @@ public class MarketService {
     private final MarketRepository marketRepository;
 
     public Market save(CreateMarketDto request){
+
         return marketRepository.save(request.toEntity());
     }
 
     public List<Market> findAll(){
+
         return marketRepository.findAll();
     }
 
     public Market findById(long id){
         return marketRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("not found:" + id));
+    }
+
+    //find by query
+    public List<Market> findByQuery(String name, String location, String ratingURL) {
+        return marketRepository.findByQuery(name, location, ratingURL);
     }
 
     @Transactional
