@@ -1,6 +1,7 @@
 package com.example.mealkit.model;
 
 import com.example.mealkit.dto.UpdateProductRequest;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -51,27 +52,36 @@ public class Product {
     @Column
     private String product_size;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "market_id")
     @ToString.Exclude
     private Market market;
 
     @Builder
-    public Product(String product_name, String product_description, List<String> product_type, int product_stock,
-                   BigDecimal product_price, BigDecimal product_discount, List<String> product_allergy,
-                   Date product_production_date, Date product_expiration_date, byte[] product_image,
-                   String product_size, Market market) {
+    public Product(String product_name,
+//                   String product_description,
+//                   List<String> product_type,
+//                   int product_stock,
+//                   BigDecimal product_price,
+//                   BigDecimal product_discount,
+//                   List<String> product_allergy,
+//                   Date product_production_date,
+//                   Date product_expiration_date,
+//                   byte[] product_image,
+//                   String product_size,
+                   Market market) {
         this.product_name = product_name;
-        this.product_description = product_description;
-        this.product_type = product_type;
-        this.product_stock = product_stock;
-        this.product_price = product_price;
-        this.product_discount = product_discount;
-        this.product_allergy = product_allergy;
-        this.product_production_date = product_production_date;
-        this.product_expiration_date = product_expiration_date;
-        this.product_image = product_image;
-        this.product_size = product_size;
+//        this.product_description = product_description;
+//        this.product_type = product_type;
+//        this.product_stock = product_stock;
+//        this.product_price = product_price;
+//        this.product_discount = product_discount;
+//        this.product_allergy = product_allergy;
+//        this.product_production_date = product_production_date;
+//        this.product_expiration_date = product_expiration_date;
+//        this.product_image = product_image;
+//        this.product_size = product_size;
         this.market = market;
     }
 

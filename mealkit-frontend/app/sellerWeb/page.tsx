@@ -5,9 +5,8 @@ function page(props) {
   return (
     <Layout>
     <div>
-      ㄴㅇㄴㅇ
-    </div>
-    ㄴㅇㄴㅇ
+      
+    </div>    
   </Layout>
   );
 }

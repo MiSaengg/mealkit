@@ -18,16 +18,16 @@ import java.util.List;
 public class ProductApiController {
     private final ProductService productService;
 
-    @PostMapping("/api/product")
-    public ResponseEntity<Product> addProduct(@RequestBody AddProductRequest request){
-        Product savedProduct = productService.save(request);
+    @PostMapping("/api/market/{id}/product")
+    public ResponseEntity<Product> addProduct(@RequestBody AddProductRequest request, @PathVariable long id){
+        Product savedProduct = productService.save(request, id);
 
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(savedProduct);
     }
 
-    @GetMapping("/api/product")
-    public ResponseEntity<List<ReadProductRequest>> readProduct(){
+    @GetMapping("/api/market/{id}/product")
+    public ResponseEntity<List<ReadProductRequest>> readProduct(@PathVariable String id){
         List<ReadProductRequest> products = productService.findAll()
                 .stream()
                 .map(ReadProductRequest::new)
@@ -37,8 +37,8 @@ public class ProductApiController {
                 .body(products);
     }
 
-    @PostMapping("/api/product/{id}")
-    public ResponseEntity<Product> updateProduct(@PathVariable long id, @RequestBody UpdateProductDto request){
+    @PostMapping("/api/market/{id}/product/{productId}")
+    public ResponseEntity<Product> updateProduct(@PathVariable long id, @RequestBody UpdateProductDto request, @PathVariable String productId){
         Product updatedProduct = productService.update(id, request);
 
         return ResponseEntity.ok()
