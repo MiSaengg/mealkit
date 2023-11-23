@@ -12,7 +12,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       {/* 여기에 헤더, 푸터 등 공통 요소를 추가 */}
       {children}
       <SellerHeader></SellerHeader>
-      <Sidebar></Sidebar>
+      {/* <Sidebar></Sidebar> */}
       <SellerFooter></SellerFooter>
       
     </div>
