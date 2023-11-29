@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createRoot } from 'react-dom/client';
 
 interface DashboardProps {
   onButtonClick: (buttonName: string) => void;
