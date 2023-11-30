@@ -1,15 +1,7 @@
 import React, { PureComponent } from 'react';
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ReferenceLine,
-  ResponsiveContainer,
-} from 'recharts';
+import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+
+
 const data = [
   {
     "name": "MON",
@@ -51,22 +43,22 @@ const data = [
 function WeeklyOrderNumber(props) {
   return (
     <div>
-    <div class="flex justify-center"><h1>WeeklyOrderNumber </h1></div>
-    <div>
-      <LineChart width={730} height={250} data={data}
-      margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+      <div class="flex justify-center"><h1>Weekly Sales</h1></div>
+      <div>
+        <BarChart width={500} height={250} data={data}>
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="name" />
       <YAxis />
       <Tooltip />
       <Legend />
-      <Line type="monotone" dataKey="This Week" stroke="#A66867" />
-      <Line type="monotone" dataKey="Last Week" stroke="#000000" />
-      </LineChart>
+      <Bar dataKey="This Week" fill="#883534" />
+      <Bar dataKey="Last Week" fill="#858689" />
+      </BarChart>
+      </div>
+      
     </div>
-    
-  </div>
   );
 }
 
 export default WeeklyOrderNumber;
+
