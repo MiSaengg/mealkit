@@ -11,16 +11,16 @@ function page(props) {
     <div className='bg-amber-300'>
       <h1> Overall Status</h1>
       <div className="container grid grid-cols-2 gap-10">
-        <div className='p-4 box-border p-4 border-4'>
+        <div className='p-4 box-border border-4'>
           <WeeklySales/>
         </div>
-        <div className='p-4 box-border p-4 border-4'>
+        <div className='p-4 box-border border-4'>
           <WeeklyOrderNumber/>
         </div>
-        <div className='p-4 box-border p-4 border-4'>
+        <div className='p-4 box-border border-4'>
           <WeeklyOrderRequest/>
         </div>
-        <div className='p-4 box-border p-4 border-4'>
+        <div className='p-4 box-border border-4'>
           <WeeklyReviewStatus/>
         </div>
       </div>

@@ -17,7 +17,6 @@ function WeeklyOrderRequest(props) {
       <div className='p-4 h-20 w-20 box-border p-4 border-4'>      
         <h1>Approved</h1>
       </div>
-      
     </div>
   </div>
   );
