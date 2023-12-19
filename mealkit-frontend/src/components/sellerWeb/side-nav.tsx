@@ -2,6 +2,9 @@
 
 import React, { useState } from 'react';
 
+import Image from 'next/image'
+import hankiiLogo from '../../../public/hankiiLogo.png';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -15,10 +18,9 @@ const SideNav = () => {
       <div className="flex flex-col space-y-6 w-full">
         <Link
           href="/"
-          className="flex flex-row space-x-3 items-center justify-center md:justify-start md:px-6 border-b border-zinc-200 h-12 w-full"
+          className="flex flex-row space-x-3 items-center justify-center md:px-6 border-b border-zinc-200 h-24 w-full"
         >
-          <span className="h-7 w-7 bg-zinc-300 rounded-lg" />
-          <span className="font-bold text-xl hidden md:flex">Logo</span>
+          <Image src={hankiiLogo} width={100} height={100} alt="Logo"/>            
         </Link>
 
         <div className="flex flex-col space-y-2  md:px-6 ">
