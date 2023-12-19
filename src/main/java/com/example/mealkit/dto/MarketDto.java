@@ -3,8 +3,11 @@ package com.example.mealkit.dto;
 import com.example.mealkit.model.Market;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-@Data
+@Getter
+@NoArgsConstructor
 @AllArgsConstructor
 public class MarketDto {
     private Long id;
@@ -28,4 +31,5 @@ public class MarketDto {
         this.description = market.getDescription();
         // this.contact = entity.getContact();
     }
+
 }

@@ -64,6 +64,7 @@ class MarketApiControllerTest {
 
         final String requestBody = objectMapper.writeValueAsString(userRequest);
 
+
         //when (Send a Request)
         ResultActions result = mockMvc.perform(post(url)
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
