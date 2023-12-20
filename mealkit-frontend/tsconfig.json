@@ -33,7 +33,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/components/sellerWeb/overallStatus/weekly-order-number.js"  ],
   "exclude": [
     "node_modules"
   ]
