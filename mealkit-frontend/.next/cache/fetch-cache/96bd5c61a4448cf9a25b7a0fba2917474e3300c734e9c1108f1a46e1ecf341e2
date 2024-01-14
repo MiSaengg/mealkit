@@ -1,0 +1,1 @@
+{"kind":"FETCH","data":{"headers":{"connection":"keep-alive","content-length":"16","content-type":"text/plain;charset=UTF-8","date":"Wed, 12 Jul 2023 01:39:11 GMT","keep-alive":"timeout=60"},"body":"TWVhbCBLaXQgUHJvamVjdA==","status":200,"tags":["/page"],"url":"http://localhost:8000/api/market"},"revalidate":31536000}

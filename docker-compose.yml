@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  db:
+    container_name: mealkit # 컨테이너 이름(docker dashboard에 뜨는 이름)
+    restart: always # 항상 재시작(명시되어 있지 않을 경우 no가 default이며 어떤 상황에서도 restart 안함)
+    build: # build할 때 필요한 속성 지정
+      context: "${DB_BUILD_CONTEXT}" # Dockerfile이 들어있는 경로 지정
+      dockerfile: Dockerfile-postgres # 빌드 시 사용할 Dockerfile 이름으로, Dockerfile이 아닌 다른 이름으로 생성할 경우 명시 필요
+    ports:
+      - "5432:5432" # HOST_PORT:CONTAINER_PORT로 host의 5432 포트를 container의 5432 포트와 매핑
+    environment:
+      POSTGRES_USER: "${DB_USER_ID}" # 선택 속성으로 POSTGRES_PASSWORD와 함께 사용되며, POSTGRES_USER명으로 superuser가 생성됨(작성하지 않을 경우 postgres 이름으로 superuser 생성)
+      POSTGRES_PASSWORD: "${DB_USER_PASSWORD}" # 필수 속성으로 postgreSQL의 superuser password(비어있거나 선언되지 않으면 안됨)
+      APP_DB_NAME: "${APP_DB_NAME}"
+      APP_DB_USER: "${APP_DB_USER}"
+      APP_DB_PASS: "${APP_DB_PASS}"
+    volumes:
+      - ${POSTGRES_HOME_DIR}/data:/var/lib/postgresql/data # ${POSTGRES_HOME_DIR}/data 부분이 실제 PostgreSQL 저장 경로로 컨테이너 종료 또는 삭제되었을 때 내부 데이터 날림 방지하기 위한 설정
+    app:
+      container_name: daedong-bread-backend
+      build:
+        context: "${APP_BUILD_CONTEXT}"
+        dockerfile: Dockerfile-dev
+      ports:
+        - "8080:8080"
+      environment: # springboot의 application-*.yml에 주입 필요한 정보
+        S3_ACCESSKEY: "${S3_ACCESSKEY}"
+        S3_SECRETKEY: "${S3_SECRETKEY}"
+        S3_REGION: "${S3_REGION}"
+        S3_BUCKET: "${S3_BUCKET}"
+        DB_HOSTNAME: db
+        DB_PORT: 5432
+        DB_DBNAME: "${APP_DB_NAME}"
+        DB_USERNAME: "${APP_DB_USER}"
+        DB_PASSWORD: "${APP_DB_PASS}"
+      depends_on:
+        - db # db가 뜬 후에 app이 뜰 수 있도록 depends_on 설정

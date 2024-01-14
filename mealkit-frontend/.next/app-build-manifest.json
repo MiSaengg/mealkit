@@ -1,0 +1,61 @@
+{
+  "pages": {
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
+    ],
+    "/sellerWeb/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/sellerWeb/layout.css",
+      "static/chunks/app/sellerWeb/layout.js"
+    ],
+    "/sellerWeb/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/sellerWeb/page.js"
+    ],
+    "/sellerWeb/menu/menu-manage/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/sellerWeb/menu/menu-manage/page.js"
+    ],
+    "/sellerWeb/dashboard/overall-status/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/sellerWeb/dashboard/overall-status/page.js"
+    ],
+    "/sellerWeb/dashboard/manage-store/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/sellerWeb/dashboard/manage-store/page.js"
+    ],
+    "/sellerWeb/dashboard/temporary-close/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/sellerWeb/dashboard/temporary-close/page.js"
+    ],
+    "/sellerWeb/order/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/sellerWeb/order/page.js"
+    ],
+    "/sellerWeb/review/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/sellerWeb/review/page.js"
+    ],
+    "/sellerWeb/add/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/sellerWeb/add/page.js"
+    ]
+  }
+}

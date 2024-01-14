@@ -1,0 +1,240 @@
+{
+  "ssrModuleMapping": {
+    "(app-client)/./node_modules/next/dist/client/components/error-boundary.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/error-boundary.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/components/app-router.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/app-router.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/components/layout-router.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/layout-router.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/render-from-template-context.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/page.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/page.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/components/sellerWeb/header.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/components/sellerWeb/header.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/components/sellerWeb/header-mobile.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/components/sellerWeb/header-mobile.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/components/sellerWeb/side-nav.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/components/sellerWeb/side-nav.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/sellerWeb/dashboard/overall-status/page.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/sellerWeb/dashboard/overall-status/page.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    }
+  },
+  "edgeSSRModuleMapping": {},
+  "clientModules": {
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/node_modules/next/dist/client/components/error-boundary.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/node_modules/next/dist/esm/client/components/error-boundary.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/node_modules/next/dist/client/components/app-router.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/node_modules/next/dist/esm/client/components/app-router.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/node_modules/next/dist/client/components/layout-router.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/node_modules/next/dist/esm/client/components/layout-router.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/node_modules/next/dist/client/components/render-from-template-context.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/node_modules/next/dist/esm/client/components/render-from-template-context.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/node_modules/next/dist/esm/client/components/static-generation-searchparams-bailout-provider.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/src/app/page.tsx": {
+      "id": "(app-client)/./src/app/page.tsx",
+      "name": "*",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/src/styles/globals.css": {
+      "id": "(app-client)/./src/styles/globals.css",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/node_modules/next/font/google/target.css?{\"path\":\"src/app/sellerWeb/layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}": {
+      "id": "(app-client)/./node_modules/next/font/google/target.css?{\"path\":\"src/app/sellerWeb/layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}",
+      "name": "*",
+      "chunks": [
+        "app/sellerWeb/layout:static/chunks/app/sellerWeb/layout.js"
+      ],
+      "async": false
+    },
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/src/components/sellerWeb/header.tsx": {
+      "id": "(app-client)/./src/components/sellerWeb/header.tsx",
+      "name": "*",
+      "chunks": [
+        "app/sellerWeb/layout:static/chunks/app/sellerWeb/layout.js"
+      ],
+      "async": false
+    },
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/src/components/sellerWeb/header-mobile.tsx": {
+      "id": "(app-client)/./src/components/sellerWeb/header-mobile.tsx",
+      "name": "*",
+      "chunks": [
+        "app/sellerWeb/layout:static/chunks/app/sellerWeb/layout.js"
+      ],
+      "async": false
+    },
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/src/components/sellerWeb/side-nav.tsx": {
+      "id": "(app-client)/./src/components/sellerWeb/side-nav.tsx",
+      "name": "*",
+      "chunks": [
+        "app/sellerWeb/layout:static/chunks/app/sellerWeb/layout.js"
+      ],
+      "async": false
+    },
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/src/app/sellerWeb/dashboard/overall-status/page.tsx": {
+      "id": "(app-client)/./src/app/sellerWeb/dashboard/overall-status/page.tsx",
+      "name": "*",
+      "chunks": [
+        "app/sellerWeb/dashboard/overall-status/page:static/chunks/app/sellerWeb/dashboard/overall-status/page.js"
+      ],
+      "async": false
+    }
+  },
+  "entryCSSFiles": {
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/src/app/page": [],
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/src/app/layout": [
+      "static/css/app/layout.css"
+    ],
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/src/app/sellerWeb/layout": [
+      "static/css/app/sellerWeb/layout.css"
+    ],
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/src/app/sellerWeb/page": [],
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/src/app/sellerWeb/menu/menu-manage/page": [],
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/src/app/sellerWeb/dashboard/overall-status/page": [],
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/src/app/sellerWeb/dashboard/manage-store/page": [],
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/src/app/sellerWeb/dashboard/temporary-close/page": [],
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/src/app/sellerWeb/order/page": [],
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/src/app/sellerWeb/review/page": [],
+    "/Users/jasperoh/Code/MealKit/mealkit/mealkit-frontend/src/app/sellerWeb/add/page": []
+  }
+}

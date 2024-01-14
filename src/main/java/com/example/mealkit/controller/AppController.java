@@ -10,12 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class AppController {
     Logger logger = LoggerFactory.getLogger(AppController.class);
 
-    @Value("${spring.application.name}")
-    private String name;
-
     @GetMapping("/")
     public String getRoot() {
-        logger.info(name);
+
         //Using http : 8000 to activate (using httpie)
         return "Meal Kit Project";
     }

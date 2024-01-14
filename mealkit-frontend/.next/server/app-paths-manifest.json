@@ -1,0 +1,9 @@
+{
+  "/page": "app/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/sellerWeb/page": "app/sellerWeb/page.js",
+  "/sellerWeb/dashboard/temporary-close/page": "app/sellerWeb/dashboard/temporary-close/page.js",
+  "/sellerWeb/dashboard/manage-store/page": "app/sellerWeb/dashboard/manage-store/page.js",
+  "/sellerWeb/dashboard/overall-status/page": "app/sellerWeb/dashboard/overall-status/page.js",
+  "/sellerWeb/menu/menu-manage/page": "app/sellerWeb/menu/menu-manage/page.js"
+}
