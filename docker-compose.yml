@@ -1,0 +1,25 @@
+  version: '3.1'
+
+  services:
+    web:
+      container_name: mealKit
+      image: springboot
+      build: ./
+      env_file:
+        - .env
+      ports:
+        - "8000:8000"
+      volumes:
+        - .:/code
+      environment:
+        - FLASK_ENV=development
+      depends_on:
+        - db
+    db:
+      image: postgres:latest
+      ports:
+        - "5432:5432"
+      environment:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+        - POSTGRES_DB=mealkit
