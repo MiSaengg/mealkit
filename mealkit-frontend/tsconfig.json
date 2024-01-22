@@ -26,14 +26,16 @@
         "./src/*"
       ]
     },
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "strictNullChecks": true
   },
   "include": [
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "src/components/sellerWeb/overallStatus/weekly-order-number.js"  ],
+    "**/*.tsx",
+    "src/components/sellerWeb/overallStatus/weekly-order-number.js"
+, "pages/api/auth/[...nextauth].js"  ],
   "exclude": [
     "node_modules"
   ]
