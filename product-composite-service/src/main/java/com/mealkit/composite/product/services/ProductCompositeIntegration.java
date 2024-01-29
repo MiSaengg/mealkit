@@ -7,17 +7,27 @@ import com.mealkit.apibridge.core.recommendation.Recommendation;
 import com.mealkit.apibridge.core.recommendation.RecommendationService;
 import com.mealkit.apibridge.core.review.Review;
 import com.mealkit.apibridge.core.review.ReviewService;
+import com.mealkit.util.exception.InvalidInputException;
+import com.mealkit.util.exception.NotFoundException;
+import com.mealkit.util.http.HttpErrorInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.springframework.http.HttpMethod.GET;
+
+@Component
 public class ProductCompositeIntegration implements ProductService, RecommendationService, ReviewService{
 
     private static final Logger LOG = LoggerFactory.getLogger(ProductCompositeIntegration.class);
@@ -65,26 +75,22 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
 
         } catch (HttpClientErrorException ex) {
 
-            switch (ex.getStatusCode()) {
-
-                case NOT_FOUND:
-                    throw new NotFoundException(getErrorMessage(ex));
-
-                case UNPROCESSABLE_ENTITY :
-                    throw new InvalidInputException(getErrorMessage(ex));
-
-                default:
-                    LOG.warn("Got a unexpected HTTP error: {}, will rethrow it", ex.getStatusCode());
-                    LOG.warn("Error body: {}", ex.getResponseBodyAsString());
-                    throw ex;
+            HttpStatusCode statusCode = ex.getStatusCode();
+            if (statusCode == HttpStatus.NOT_FOUND) {
+                throw new NotFoundException(getErrorMessage(ex));
+            } else if (statusCode == HttpStatus.UNPROCESSABLE_ENTITY) {
+                throw new InvalidInputException(getErrorMessage(ex));
             }
+            LOG.warn("Got a unexpected HTTP error: {}, will rethrow it", ex.getStatusCode());
+            LOG.warn("Error body: {}", ex.getResponseBodyAsString());
+            throw ex;
         }
     }
 
     private String getErrorMessage(HttpClientErrorException ex) {
         try {
             return mapper.readValue(ex.getResponseBodyAsString(), HttpErrorInfo.class).getMessage();
-        } catch (IOException ioex) {
+        } catch (IOException ioException) {
             return ex.getMessage();
         }
     }
