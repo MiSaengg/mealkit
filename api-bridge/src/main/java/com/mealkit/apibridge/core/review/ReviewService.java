@@ -11,5 +11,5 @@ import java.util.List;
 public interface ReviewService {
 
     @GetMapping(value = "/api/review" , produces = MediaType.APPLICATION_JSON_VALUE)
-    List<Review> getReview(@RequestParam(value="productId", required =  true) Long productId);
+    List<Review> getReviews(@RequestParam(value="productId", required =  true) Long productId);
 }
