@@ -2,20 +2,24 @@ package com.mealkit.apibridge.core.Product;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+
 
 @Getter
+@RequiredArgsConstructor
 @AllArgsConstructor
 public class Product{
-    private Long productId;
-    private String name;
-    private int weight;
-    private String serviceAddress;
+    private final Long productId;
+    private final String name;
+    private final int weight;
+    private final String serviceAddress;
 
-    public Product() {
-        productId = 0L;
-        name = null;
-        weight = 0;
-        serviceAddress = null;
+    public Product(){
+        this.productId = null;
+        this.name = null;
+        this.weight = 0;
+        this.serviceAddress = null;
     }
+
 }

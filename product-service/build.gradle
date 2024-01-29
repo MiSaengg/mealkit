@@ -28,12 +28,15 @@ repositories {
 }
 
 dependencies {
+	compileOnly('org.projectlombok:lombok')
+
 	implementation project(':api-bridge')
 	implementation project(':util')
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
+
 }
 
 tasks.named('test') {

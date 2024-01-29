@@ -114,7 +114,7 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
 
 
     @Override
-    public List<Review> getReview(Long productId) {
+    public List<Review> getReviews(Long productId) {
         try {
             String url = reviewServiceUrl + productId;
 
