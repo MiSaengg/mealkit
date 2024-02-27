@@ -1,14 +1,16 @@
 package com.mealkit.composite.product.services;
 
-import com.mealkit.apibridge.composite.product.ProductAggregate;
-import com.mealkit.apibridge.composite.product.ProductCompositeService;
+import com.mealkit.apibridge.composite.product.*;
 import com.mealkit.apibridge.core.Product.Product;
 import com.mealkit.apibridge.core.recommendation.Recommendation;
 import com.mealkit.apibridge.core.review.Review;
+import com.mealkit.util.exception.NotFoundException;
+import com.mealkit.util.http.ServiceUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 public class ProductCompositeServiceImpl implements ProductCompositeService {

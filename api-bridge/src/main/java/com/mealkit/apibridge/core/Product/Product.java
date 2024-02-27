@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 public class Product{
     private final Long productId;
     private final String name;
